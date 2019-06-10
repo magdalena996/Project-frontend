@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit
 
   showApplicantForm()
   {
-
+    this.router.navigateByUrl('apply');
   }
 
   showRecruitPage()

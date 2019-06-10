@@ -1,0 +1,131 @@
+textarea
+{
+  resize: none;
+  border-radius: 10px;
+}
+
+input
+{
+  border-radius: 2px;
+}
+
+textarea, input
+{
+  outline-color: #FF9944;
+  background-color: lightgrey;
+  font-family: Cambria, sans-serif;
+  font-size: 18px;
+}
+
+
+#container
+{
+  position: relative;
+  top: 50px;
+  width: 1080px;
+  min-height: 900px;
+  max-height: 100%;
+  margin: auto;
+  background-color: lightgrey;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+#container, #send, #home
+{
+  -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
+}
+
+#send
+{
+  position: relative;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 2px;
+  outline-color: #FF9944;
+  font-family: Cambria, sans-serif;
+}
+
+#selectPosition
+{
+
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+  outline-color: #FF9944;
+  font-family: Cambria, sans-serif;
+}
+
+#companyName
+{
+  color: darkorange;
+  font-size: 24px;
+  font-family: Consolas, sans-serif;
+  position: relative;
+  left: 70%;
+  top: 50px;
+}
+
+#title
+{
+  background-color: #e0e0e0;
+  color: #FF9944;
+  text-align: center;
+  font-size: 32px;
+}
+
+#afterSend, #home
+{
+  font-size: 36px;
+}
+
+#home
+{
+  padding: 10px;
+  outline-color: #FF9944;
+  background-color: lightgrey;
+  font-family: Cambria, sans-serif;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.headers
+{
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+}
+
+.divs
+{
+  font-size: 20px;
+  padding: 20px;
+  background-color: #e0e0e0;
+  margin: 10px 30px;
+}
+
+.infoText
+{
+  font-family: Cambria, sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+}
+
+button:hover, label:hover
+{
+  cursor: pointer;
+}
+
+button:hover
+{
+  background-color: lightgrey;
+}
+
+textarea:focus, input:focus
+{
+  background-color: #e0e0e0;
+}
