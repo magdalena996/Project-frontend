@@ -43,7 +43,71 @@ export class ApplicantFormComponent implements OnInit
 
   showRequirements()
   {
+    if(this.ifCreated)
+    {
+      document.getElementById("requirements").removeChild(document.getElementById("preUl"));
+    }
 
+    var ul = document.createElement('ul');
+    ul.id = "preUl";
+
+    if (this.position === 'opiekunSp')
+    {
+      for (let i = 0; i < this.requirementsSP.length; i++)
+      {
+        var li = document.createElement('li');
+        var pos = document.createTextNode(this.requirementsSP[i]);
+        li.appendChild(pos);
+        ul.appendChild(li);
+      }
+      this.ifCreated = true;
+
+    } else if (this.position === 'opiekunVip')
+    {
+
+      for (let i = 0; i < this.requirementsVIP.length; i++)
+      {
+        var li = document.createElement('li');
+        var pos = document.createTextNode(this.requirementsVIP[i]);
+        li.appendChild(pos);
+        ul.appendChild(li);
+      }
+      this.ifCreated = true;
+
+    } else if (this.position === 'pomocnik')
+    {
+      for (let i = 0; i < this.requirementsHelper.length; i++)
+      {
+        var li = document.createElement('li');
+        var pos = document.createTextNode(this.requirementsHelper[i]);
+        li.appendChild(pos);
+        ul.appendChild(li);
+      }
+      this.ifCreated = true;
+
+    } else if (this.position === 'komentator')
+    {
+      for (let i = 0; i < this.requirementsComment.length; i++)
+      {
+        var li = document.createElement('li');
+        var pos = document.createTextNode(this.requirementsComment[i]);
+        li.appendChild(pos);
+        ul.appendChild(li);
+      }
+      this.ifCreated = true;
+
+    } else
+    {
+      var error = document.createTextNode("Stanowisko nie zostało wybrane");
+      var li = document.createElement('li');
+      li.appendChild(error);
+      ul.appendChild(li);
+      this.ifCreated = true;
+    }
+    document.getElementById("requirements").appendChild(ul);
+    ul.style.listStyleType='square';
+    ul.style.textAlign='left';
+    ul.style.marginLeft='200px';
   }
 
   sendApplication()
