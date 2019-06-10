@@ -37,19 +37,23 @@ export class ApplicantFormComponent implements OnInit
 
   ifCreated = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router)
+  {
+  }
 
-  ngOnInit() {}
+  ngOnInit()
+  {
+  }
 
   showRequirements()
   {
-    if(this.ifCreated)
+    if (this.ifCreated)
     {
-      document.getElementById("requirements").removeChild(document.getElementById("preUl"));
+      document.getElementById('requirements').removeChild(document.getElementById('preUl'));
     }
 
     var ul = document.createElement('ul');
-    ul.id = "preUl";
+    ul.id = 'preUl';
 
     if (this.position === 'opiekunSp')
     {
@@ -98,25 +102,40 @@ export class ApplicantFormComponent implements OnInit
 
     } else
     {
-      var error = document.createTextNode("Stanowisko nie zostało wybrane");
+      var error = document.createTextNode('Stanowisko nie zostało wybrane');
       var li = document.createElement('li');
       li.appendChild(error);
       ul.appendChild(li);
       this.ifCreated = true;
     }
-    document.getElementById("requirements").appendChild(ul);
-    ul.style.listStyleType='square';
-    ul.style.textAlign='left';
-    ul.style.marginLeft='200px';
+    document.getElementById('requirements').appendChild(ul);
+    ul.style.listStyleType = 'square';
+    ul.style.textAlign = 'left';
+    ul.style.marginLeft = '200px';
   }
 
   sendApplication()
   {
+    if (this.agree)
+    {
+      var h = document.getElementById('toHidden');
+      h.hidden = true;
+      var box = document.getElementById('afterSend');
+      box.hidden = false;
+    } else
+    {
+      var label = document.getElementById('agreeLabel');
+      setTimeout(function()
+      {
+        label.style.color = 'black';
 
+      }, 1000);
+      label.style.color = 'red';
+    }
   }
 
   showHomePage()
   {
-
+    this.router.navigateByUrl('home');
   }
 }
