@@ -1,0 +1,33 @@
+<div>
+  <div id="companyName">{{companyName}}</div>
+  <div id="container">
+    <div class="divs" id="title"><h1>{{title}}</h1></div>
+    <br/>
+    <hr>
+
+    <div class="divs">
+      <span class="headers">Opis zachęcający do aplikowania</span> <br/>
+    </div>
+
+    <div class="divs">
+      <span class="headers">Złóż podanie lub zobacz listę nadesłanych podań </span> <br/>
+      <div class="flex">
+        <button (click)="showApplicantForm()">Złóż podanie</button>
+        <button (click)="showRecruitPage()">Pokaż listę podań</button>
+      </div>
+    </div>
+
+    <div class="divs">
+      <span class="headers">Opis stanowisk</span> <br/>
+      <br/>
+      <div class="flex">
+        <button (click)="showDescription()">Opiekun SP</button>
+        <button (click)="showDescription()">Opiekun VIP</button>
+        <button (click)="showDescription()">Pomocnik</button>
+        <button (click)="showDescription()">Komentator</button>
+      </div>
+      <div id="positionDescription"></div>
+    </div>
+
+  </div>
+</div>
