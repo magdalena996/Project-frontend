@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ApplicantFormComponent } from './applicant-form/applicant-form.component';
+import { RecruiterPageComponent } from './recruiter-page/recruiter-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    ApplicantFormComponent
+    ApplicantFormComponent,
+    RecruiterPageComponent
   ],
   imports: [
     BrowserModule,

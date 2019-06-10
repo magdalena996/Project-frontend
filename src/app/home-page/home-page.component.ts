@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit
 
   showRecruitPage()
   {
-
+    this.router.navigateByUrl('recruit');
   }
 
   showDescription()

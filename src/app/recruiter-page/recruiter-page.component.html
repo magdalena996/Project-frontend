@@ -1,0 +1,24 @@
+<div>
+  <div id="companyName">{{companyName}}</div>
+  <div id="container">
+    <div class="divs" id="title"><h1>{{title}}</h1></div>
+    <hr>
+    <button id="home" (click)="showHomePage()">Strona Główna</button>
+    <div class="divs">
+      <span class="headers">Wybierz stanowisko</span> <br/>
+      <div class="flex">
+        <button (click)="showApplications()">Opiekun SP</button>
+        <button (click)="showApplications()">Opiekun VIP</button>
+        <button (click)="showApplications()">Pomocnik</button>
+        <button (click)="showApplications()">Komentator</button>
+      </div>
+
+    </div>
+
+    <div class="divs">
+      <span class="headers">Lista podań na wybrane stanowisko</span> <br/>
+
+    </div>
+
+  </div>
+</div>
