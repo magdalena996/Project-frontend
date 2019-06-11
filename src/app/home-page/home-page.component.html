@@ -21,12 +21,35 @@
       <span class="headers">Opis stanowisk</span> <br/>
       <br/>
       <div class="flex">
-        <button (click)="showDescription()">Opiekun SP</button>
-        <button (click)="showDescription()">Opiekun VIP</button>
-        <button (click)="showDescription()">Pomocnik</button>
-        <button (click)="showDescription()">Komentator</button>
+        <button id="button1" (click)="showSpDescription()">Opiekun SP</button>
+        <button id="button2" (click)="showVipDescription()">Opiekun VIP</button>
+        <button id="button3" (click)="showHelperDescription()">Pomocnik</button>
+        <button id="button4" (click)="showCommentDescription()">Komentator</button>
       </div>
-      <div id="positionDescription"></div>
+<!--      <div id="positionDescription" hidden=true"></div>-->
+
+    </div>
+
+    <div class="divs">
+      <div id="spDescription" hidden="true">
+        <span class="headers">Opiekun Strefy Prywatnej</span> <br/>
+        <p class="description">{{spDescription}}</p>
+      </div>
+
+      <div id="vipDescription" hidden="true">
+        <span class="headers">Opiekun Strefy VIP</span> <br/>
+        <p class="description">{{vipDescription}}</p>
+      </div>
+
+      <div id="helperDescription" hidden="true">
+        <span class="headers">Pomocnik</span> <br/>
+        <p class="description">{{helperDescription}}</p>
+      </div>
+
+      <div id="commentDescription" hidden="true">
+        <span class="headers">Komentator</span> <br/>
+        <p class="description">{{commentDescription}}</p>
+      </div>
     </div>
 
   </div>

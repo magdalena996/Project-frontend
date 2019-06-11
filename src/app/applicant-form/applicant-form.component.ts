@@ -37,7 +37,7 @@ export class ApplicantFormComponent implements OnInit
   requirementsHelper: Array<string> = [ '1h', '2h', '3h' ];
   requirementsComment: Array<string> = [ '1c', '2c', '3c' ];
 
-  ifWritedInfo = false;
+  ifWroteInfo = false;
   ifError = false;
 
   ifCreated = false;
@@ -172,7 +172,7 @@ export class ApplicantFormComponent implements OnInit
 
   checkForm()
   {
-    if (this.ifWritedInfo)
+    if (this.ifWroteInfo)
     {
       document.getElementById('formInfo').removeChild(document.getElementById('preP'));
     }
@@ -190,7 +190,7 @@ export class ApplicantFormComponent implements OnInit
       p.appendChild(text);
       document.getElementById('formInfo').hidden = false;
       document.getElementById('formInfo').appendChild(p);
-      this.ifWritedInfo = true;
+      this.ifWroteInfo = true;
       this.ifError = true;
     }
 
@@ -201,7 +201,7 @@ export class ApplicantFormComponent implements OnInit
       p.appendChild(text);
       document.getElementById('formInfo').hidden = false;
       document.getElementById('formInfo').appendChild(p);
-      this.ifWritedInfo = true;
+      this.ifWroteInfo = true;
       this.ifError = true;
     }
 
