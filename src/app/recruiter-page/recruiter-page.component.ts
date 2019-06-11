@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { Application } from '../application';
 
 @Component({
   selector: 'app-recruiter-page',
@@ -10,14 +12,11 @@ export class RecruiterPageComponent implements OnInit
 {
   companyName = 'INFERNO TS3';
   title = 'Odebrane podania';
+  applications: Array<Application> = [];
 
-  constructor(private router: Router)
-  {
-  }
+  constructor(private router: Router, private apiService: ApiService) {}
 
-  ngOnInit()
-  {
-  }
+  ngOnInit() {}
 
   showHomePage()
   {
@@ -66,6 +65,7 @@ export class RecruiterPageComponent implements OnInit
 
   showApplications()
   {
+    this.apiService.getAllApplications().subscribe(data => {this.applications = data}, error => {console.log(error)});
     document.getElementById("allApplications").hidden = false;
     document.getElementById("forSelectedPosition").hidden = true;
   }

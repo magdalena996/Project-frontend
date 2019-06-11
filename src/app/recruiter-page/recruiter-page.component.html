@@ -17,6 +17,28 @@
 
     <div class="divs" id="allApplications">
       <span class="headers">Lista wszystkich podań</span> <br/>
+      <div>
+        <table *ngIf="applications.length > 0">
+          <tr>
+            <td>Imie</td>
+            <td>Nick</td>
+            <td>Wiek</td>
+            <td>Wybrane stanowisko</td>
+            <td>Umiejetności</td>
+            <td>Kilka słów o sobie</td>
+            <td>Dlaczego aplikuje</td>
+          </tr>
+          <tr *ngFor="let application of applications">
+            <td>{{application.name}}</td>
+            <td>{{application.nick}}</td>
+            <td>{{application.age}}</td>
+            <td>{{application.position}}</td>
+            <td>{{application.knowledgeTs3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+            <td>{{application.wordsAboutSelf}}</td>
+            <td>{{application.whyApply}}</td>
+          </tr>
+        </table>
+      </div>
 
     </div>
 
