@@ -19,13 +19,54 @@ export class RecruiterPageComponent implements OnInit
   {
   }
 
-  showApplications()
-  {
-
-  }
-
   showHomePage()
   {
     this.router.navigateByUrl('home');
+  }
+
+  showSpApplications()
+  {
+    document.getElementById("allApplications").hidden = true;
+    document.getElementById("forSelectedPosition").hidden = false;
+    document.getElementById("spApplications").hidden = false;
+    document.getElementById("vipApplications").hidden = true;
+    document.getElementById("helperApplications").hidden = true;
+    document.getElementById("commentApplications").hidden = true;
+  }
+
+  showVipApplications()
+  {
+    document.getElementById("allApplications").hidden = true;
+    document.getElementById("forSelectedPosition").hidden = false;
+    document.getElementById("spApplications").hidden = true;
+    document.getElementById("vipApplications").hidden = false;
+    document.getElementById("helperApplications").hidden = true;
+    document.getElementById("commentApplications").hidden = true;
+  }
+
+  showHelperApplications()
+  {
+    document.getElementById("allApplications").hidden = true;
+    document.getElementById("forSelectedPosition").hidden = false;
+    document.getElementById("spApplications").hidden = true;
+    document.getElementById("vipApplications").hidden = true;
+    document.getElementById("helperApplications").hidden = false;
+    document.getElementById("commentApplications").hidden = true;
+  }
+
+  showCommentApplications()
+  {
+    document.getElementById("allApplications").hidden = true;
+    document.getElementById("forSelectedPosition").hidden = false;
+    document.getElementById("spApplications").hidden = true;
+    document.getElementById("vipApplications").hidden = true;
+    document.getElementById("helperApplications").hidden = true;
+    document.getElementById("commentApplications").hidden = false;
+  }
+
+  showApplications()
+  {
+    document.getElementById("allApplications").hidden = false;
+    document.getElementById("forSelectedPosition").hidden = true;
   }
 }

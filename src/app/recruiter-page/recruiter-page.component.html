@@ -7,19 +7,42 @@
     <div class="divs">
       <span class="headers">Wybierz stanowisko</span> <br/>
       <div class="flex">
-        <button (click)="showApplications()">Opiekun SP</button>
-        <button (click)="showApplications()">Opiekun VIP</button>
-        <button (click)="showApplications()">Pomocnik</button>
-        <button (click)="showApplications()">Komentator</button>
+        <button (click)="showSpApplications()">Opiekun SP</button>
+        <button (click)="showVipApplications()">Opiekun VIP</button>
+        <button (click)="showHelperApplications()">Pomocnik</button>
+        <button (click)="showCommentApplications()">Komentator</button>
         <button (click)="showApplications()">Wszystkie</button>
       </div>
+    </div>
+
+    <div class="divs" id="allApplications">
+      <span class="headers">Lista wszystkich podań</span> <br/>
 
     </div>
 
-    <div class="divs">
+    <div id="forSelectedPosition" class="divs" hidden="true">
       <span class="headers">Lista podań na wybrane stanowisko</span> <br/>
+      <div class="divs">
+        <div id="spApplications" hidden="true">
+          <span class="names">Opiekun Strefy Prywatnej</span> <br/>
 
+        </div>
+
+        <div id="vipApplications" hidden="true">
+          <span class="names">Opiekun Strefy VIP</span> <br/>
+
+        </div>
+
+        <div id="helperApplications" hidden="true">
+          <span class="names">Pomocnik</span> <br/>
+
+        </div>
+
+        <div id="commentApplications" hidden="true">
+          <span class="names">Komentator</span> <br/>
+
+        </div>
+      </div>
     </div>
-
   </div>
 </div>
