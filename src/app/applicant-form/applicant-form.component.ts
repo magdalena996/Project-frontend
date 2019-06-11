@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { Application } from '../application';
 
 @Component({
   selector: 'app-applicant-form',
@@ -48,13 +50,9 @@ export class ApplicantFormComponent implements OnInit
   wordsAboutSelf: string;
   whyApply: string;
 
-  constructor(private router: Router)
-  {
-  }
+  constructor(private router: Router, private apiService: ApiService) {}
 
-  ngOnInit()
-  {
-  }
+  ngOnInit() {}
 
   showRequirements()
   {
@@ -135,6 +133,11 @@ export class ApplicantFormComponent implements OnInit
       h.hidden = true;
       var box = document.getElementById('afterSend');
       box.hidden = false;
+
+      let application: Application = {name: this.name, nick: this.nick, age: this.age, position: this.position,
+        knowledgeTs3: this.knowledgeTs3, ranks: this.ranks, createChannels: this.createChannels,
+        groupWork: this.groupWork, wordsAboutSelf: this.wordsAboutSelf, whyApply: this.whyApply};
+      this.apiService.sendApplication(application).subscribe(success => {console.log(success)}, error => {console.log(error)});
     }
   }
 
