@@ -14,6 +14,8 @@ export class ApplicantFormComponent implements OnInit
   agreementText = 'Oświadczam, że udzielam INFERNO TS3 wyraźnej zgody na przetwarzanie moich danych osobowych w celach udziału w procesie rekrutacji';
 
   name: string;
+  age: number;
+  nick: string;
   position: string;
   agree: string;
 
@@ -35,7 +37,16 @@ export class ApplicantFormComponent implements OnInit
   requirementsHelper: Array<string> = [ '1h', '2h', '3h' ];
   requirementsComment: Array<string> = [ '1c', '2c', '3c' ];
 
+  ifWritedInfo = false;
+  ifError = false;
+
   ifCreated = false;
+  knowledgeTs3: number;
+  ranks: number;
+  createChannels: number;
+  groupWork: number;
+  wordsAboutSelf: string;
+  whyApply: string;
 
   constructor(private router: Router)
   {
@@ -116,13 +127,85 @@ export class ApplicantFormComponent implements OnInit
 
   sendApplication()
   {
-    if (this.agree)
+    this.ifError = false;
+    this.checkForm();
+    if (!this.ifError)
     {
       var h = document.getElementById('toHidden');
       h.hidden = true;
       var box = document.getElementById('afterSend');
       box.hidden = false;
-    } else
+    }
+  }
+
+  normalizeInputValues()
+  {
+    if(this.knowledgeTs3 > 10)
+      this.knowledgeTs3 = 10;
+
+    if(this.ranks > 10)
+      this.ranks = 10;
+
+    if(this.createChannels > 10)
+      this.createChannels = 10;
+
+    if(this.groupWork > 10)
+      this.groupWork = 10;
+
+    if(this.knowledgeTs3 < 1)
+      this.knowledgeTs3 = 1;
+
+    if(this.ranks < 1)
+      this.ranks = 1;
+
+    if(this.createChannels < 1)
+      this.createChannels = 1;
+
+    if(this.groupWork < 1)
+      this.groupWork = 1;
+  }
+
+  showHomePage()
+  {
+    this.router.navigateByUrl('home');
+  }
+
+  checkForm()
+  {
+    if (this.ifWritedInfo)
+    {
+      document.getElementById('formInfo').removeChild(document.getElementById('preP'));
+    }
+
+    var p = document.createElement('p');
+    p.id = 'preP';
+    p.style.color = 'red';
+    p.style.fontSize = '18px';
+    p.style.fontFamily = 'Consolas';
+    p.style.fontWeight = 'bold';
+
+    if (!this.position)
+    {
+      var text = document.createTextNode(' Stanowisko nie zostało wybrane! ');
+      p.appendChild(text);
+      document.getElementById('formInfo').hidden = false;
+      document.getElementById('formInfo').appendChild(p);
+      this.ifWritedInfo = true;
+      this.ifError = true;
+    }
+
+    if (!this.name || !this.nick || !this.age || !this.knowledgeTs3 || !this.ranks || !this.createChannels
+      || !this.groupWork || !this.wordsAboutSelf || !this.whyApply)
+    {
+      var text = document.createTextNode(' Wszystkie pola formularza muszą być wypełnione! ');
+      p.appendChild(text);
+      document.getElementById('formInfo').hidden = false;
+      document.getElementById('formInfo').appendChild(p);
+      this.ifWritedInfo = true;
+      this.ifError = true;
+    }
+
+    if (!this.agree)
     {
       var label = document.getElementById('agreeLabel');
       setTimeout(function()
@@ -131,11 +214,8 @@ export class ApplicantFormComponent implements OnInit
 
       }, 1000);
       label.style.color = 'red';
+      this.ifError = true;
     }
-  }
-
-  showHomePage()
-  {
-    this.router.navigateByUrl('home');
+    this.normalizeInputValues();
   }
 }

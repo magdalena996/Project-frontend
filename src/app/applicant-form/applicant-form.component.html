@@ -26,20 +26,24 @@
 
         <p><label>Imie: <input type="text" id="name" [(ngModel)]="name" minlength="3" maxlength="50"
                                required></label></p>
-        <p><label>Wiek: <input type="number" id="age" name="age" min="15" max="50" required> </label></p>
-        <p><label>Nick na TS3: <input type="text" id="nick" name="nick" required></label></p>
+        <p><label>Wiek: <input type="number" id="age" [(ngModel)]="age" min="15" max="50" required> </label></p>
+        <p><label>Nick na TS3: <input type="text" id="nick" [(ngModel)]="nick" required></label></p>
       </div>
 
       <div class="divs">
         <span class="headers">Umiejętności (1 - najniższe, 10 - najwyższe)</span> <br/>
 
-        <p><label>Znajomość programu Team Speak 3 <input type="number" name="knowledgeTs3" min="1" max="10" required>
+        <p><label>Znajomość programu Team Speak 3 <input type="number" [(ngModel)]="knowledgeTs3" min="1" max="10"
+                                                         required>
         </label></p>
-        <p><label>Umiejętność związana z nadawaniem rang <input type="number" name="ranks" min="1" max="10" required>
+        <p><label>Umiejętność związana z nadawaniem rang <input type="number" [(ngModel)]="ranks" min="1" max="10"
+                                                                required>
         </label></p>
-        <p><label>Umiejętność związana z tworzeniem kanałów <input type="number" name="createChannels" min="1" max="10"
+        <p><label>Umiejętność związana z tworzeniem kanałów <input type="number" [(ngModel)]="createChannels" min="1"
+                                                                   max="10"
                                                                    required> </label></p>
-        <p><label>Umiejętność pracy w grupie <input type="number" name="groupWork" min="1" max="10" required> </label>
+        <p><label>Umiejętność pracy w grupie <input type="number" [(ngModel)]="groupWork" min="1" max="10" required>
+        </label>
         </p>
 
       </div>
@@ -48,19 +52,21 @@
       <div class="divs">
         <div>
           <span class="headers">Kilka słów o sobie</span> <br/>
-          <textarea id="selfDescription" rows="5" cols="100" minlength="25" maxlength="255"
+          <textarea id="selfDescription" rows="5" cols="100" minlength="25" maxlength="255" [(ngModel)]="wordsAboutSelf"
                     required></textarea>
         </div>
       </div>
       <div class="divs">
         <div>
           <span class="headers">Dlaczego chcesz otrzymać stanowisko Administratora Inferno TS3?</span> <br/>
-          <textarea id="whyApply" rows="8" cols="100" minlength="25" maxlength="800" required></textarea>
+          <textarea id="whyApply" rows="8" cols="100" minlength="25" maxlength="800" [(ngModel)]="whyApply" required></textarea>
         </div>
       </div>
       <div class="divs">
         <label id="agreeLabel"><input type="checkbox" [(ngModel)]="agree" required> {{agreementText}}
         </label>
+      </div>
+      <div id="formInfo" hidden="true">
       </div>
       <button type="submit" id="send" (click)="sendApplication()">Wyślij podanie!</button>
     </div>
