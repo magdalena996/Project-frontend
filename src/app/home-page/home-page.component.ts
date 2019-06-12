@@ -13,10 +13,10 @@ export class HomePageComponent implements OnInit
 
   // ifShow = false;
 
-  spDescription = 'Opis sp';
-  vipDescription = 'Opis vip';
-  helperDescription = 'Opis pomocnik';
-  commentDescription = 'Opis komentator Opis komentator Opis komentator Opis komentator Opis komentator Opis komentator Opis komentator Opis komentator';
+  // spDescription = 'Opis sp';
+  // vipDescription = 'Opis vip';
+  // helperDescription = 'Opis pomocnik';
+  // commentDescription = 'Opis komentator';
 
   constructor(private router: Router)
   {
