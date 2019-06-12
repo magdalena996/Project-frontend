@@ -25,17 +25,18 @@
             <th>Wiek</th>
             <th>Wybrane stanowisko</th>
             <th>Umiejetności</th>
-            <th>Kilka słów o sobie</th>
-            <th>Dlaczego aplikuje</th>
+            <th>O mnie</th>
+            <th>Dlaczego aplikuję</th>
           </tr>
           <tr *ngFor="let application of applications">
             <td>{{application.name}}</td>
             <td>{{application.nick}}</td>
             <td>{{application.age}}</td>
             <td>{{application.position}}</td>
-            <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
-            <td>{{application.wordsAboutSelf}}</td>
-            <td>{{application.whyApply}}</td>
+            <td style="width: 180px">ts3: {{application.knowledgeTS3}}, rangi: {{application.ranks}}, <br/>
+              kanały: {{application.createChannels}}, grupa: {{application.groupWork}} </td>
+            <td class="textAreas">{{application.wordsAboutSelf}}</td>
+            <td class="textAreas">{{application.whyApply}}</td>
           </tr>
         </table>
       </div>
@@ -44,7 +45,6 @@
 
     <div id="forSelectedPosition" class="divs" hidden="true">
       <span class="headers">Lista podań na wybrane stanowisko</span> <br/>
-      <div class="divs">
 
         <div id="spApplications" hidden="true">
           <span class="names">Opiekun Strefy Prywatnej</span> <br/>
@@ -55,15 +55,16 @@
               <th>Wiek</th>
               <th>Wybrane stanowisko</th>
               <th>Umiejetności</th>
-              <th>Kilka słów o sobie</th>
-              <th>Dlaczego aplikuje</th>
+              <th>O mnie</th>
+              <th>Dlaczego aplikuję</th>
             </tr>
             <tr *ngFor="let application of applications">
               <td>{{application.name}}</td>
               <td>{{application.nick}}</td>
               <td>{{application.age}}</td>
               <td>{{application.position}}</td>
-              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td style="width: 180px">ts3: {{application.knowledgeTS3}}, rangi: {{application.ranks}}, <br/>
+                kanały: {{application.createChannels}}, grupa: {{application.groupWork}} </td>
               <td>{{application.wordsAboutSelf}}</td>
               <td>{{application.whyApply}}</td>
             </tr>
@@ -79,15 +80,16 @@
               <th>Wiek</th>
               <th>Wybrane stanowisko</th>
               <th>Umiejetności</th>
-              <th>Kilka słów o sobie</th>
-              <th>Dlaczego aplikuje</th>
+              <th>O mnie</th>
+              <th>Dlaczego aplikuję</th>
             </tr>
             <tr *ngFor="let application of applications">
               <td>{{application.name}}</td>
               <td>{{application.nick}}</td>
               <td>{{application.age}}</td>
               <td>{{application.position}}</td>
-              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td style="width: 180px">ts3: {{application.knowledgeTS3}}, rangi: {{application.ranks}}, <br/>
+                kanały: {{application.createChannels}}, grupa: {{application.groupWork}} </td>
               <td>{{application.wordsAboutSelf}}</td>
               <td>{{application.whyApply}}</td>
             </tr>
@@ -103,15 +105,16 @@
               <th>Wiek</th>
               <th>Wybrane stanowisko</th>
               <th>Umiejetności</th>
-              <th>Kilka słów o sobie</th>
-              <th>Dlaczego aplikuje</th>
+              <th>O mnie</th>
+              <th>Dlaczego aplikuję</th>
             </tr>
             <tr *ngFor="let application of applications">
               <td>{{application.name}}</td>
               <td>{{application.nick}}</td>
               <td>{{application.age}}</td>
               <td>{{application.position}}</td>
-              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td style="width: 180px">ts3: {{application.knowledgeTS3}}, rangi: {{application.ranks}}, <br/>
+                kanały: {{application.createChannels}}, grupa: {{application.groupWork}} </td>
               <td>{{application.wordsAboutSelf}}</td>
               <td>{{application.whyApply}}</td>
             </tr>
@@ -127,22 +130,21 @@
               <th>Wiek</th>
               <th>Wybrane stanowisko</th>
               <th>Umiejetności</th>
-              <th>Kilka słów o sobie</th>
-              <th>Dlaczego aplikuje</th>
+              <th>O mnie</th>
+              <th>Dlaczego aplikuję</th>
             </tr>
             <tr *ngFor="let application of applications">
               <td>{{application.name}}</td>
               <td>{{application.nick}}</td>
               <td>{{application.age}}</td>
               <td>{{application.position}}</td>
-              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td style="width: 180px">ts3: {{application.knowledgeTS3}}, rangi: {{application.ranks}}, <br/>
+                kanały: {{application.createChannels}}, grupa: {{application.groupWork}} </td>
               <td>{{application.wordsAboutSelf}}</td>
               <td>{{application.whyApply}}</td>
             </tr>
           </table>
         </div>
-
-      </div>
     </div>
   </div>
 </div>
