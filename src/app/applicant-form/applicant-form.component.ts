@@ -42,7 +42,11 @@ export class ApplicantFormComponent implements OnInit
     'Przygotowywanie sprawozdań z pracy',
     'Przekazywanie informacji na temat zmian w Strefie Prywatnej/VIP opiekunom'
   ];
-  requirementsComment: Array<string> = [ '1c', '2c', '3c' ];
+  requirementsComment: Array<string> = [
+    'dobra dykcja',
+    'punktualność',
+    'znajomość gry, w której są organizowane mecze ligi "Inferno TS3 League" (mechaniki, postacie)'
+  ];
 
   ifWroteInfo = false;
   ifError = false;
