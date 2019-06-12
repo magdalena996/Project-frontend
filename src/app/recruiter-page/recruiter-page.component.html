@@ -20,20 +20,20 @@
       <div>
         <table *ngIf="applications.length > 0">
           <tr>
-            <td>Imie</td>
-            <td>Nick</td>
-            <td>Wiek</td>
-            <td>Wybrane stanowisko</td>
-            <td>Umiejetności</td>
-            <td>Kilka słów o sobie</td>
-            <td>Dlaczego aplikuje</td>
+            <th>Imie</th>
+            <th>Nick</th>
+            <th>Wiek</th>
+            <th>Wybrane stanowisko</th>
+            <th>Umiejetności</th>
+            <th>Kilka słów o sobie</th>
+            <th>Dlaczego aplikuje</th>
           </tr>
           <tr *ngFor="let application of applications">
             <td>{{application.name}}</td>
             <td>{{application.nick}}</td>
             <td>{{application.age}}</td>
             <td>{{application.position}}</td>
-            <td>{{application.knowledgeTs3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+            <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
             <td>{{application.wordsAboutSelf}}</td>
             <td>{{application.whyApply}}</td>
           </tr>
@@ -45,25 +45,103 @@
     <div id="forSelectedPosition" class="divs" hidden="true">
       <span class="headers">Lista podań na wybrane stanowisko</span> <br/>
       <div class="divs">
+
         <div id="spApplications" hidden="true">
           <span class="names">Opiekun Strefy Prywatnej</span> <br/>
-
+          <table *ngIf="applications.length > 0">
+            <tr>
+              <th>Imie</th>
+              <th>Nick</th>
+              <th>Wiek</th>
+              <th>Wybrane stanowisko</th>
+              <th>Umiejetności</th>
+              <th>Kilka słów o sobie</th>
+              <th>Dlaczego aplikuje</th>
+            </tr>
+            <tr *ngFor="let application of applications">
+              <td>{{application.name}}</td>
+              <td>{{application.nick}}</td>
+              <td>{{application.age}}</td>
+              <td>{{application.position}}</td>
+              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td>{{application.wordsAboutSelf}}</td>
+              <td>{{application.whyApply}}</td>
+            </tr>
+          </table>
         </div>
 
         <div id="vipApplications" hidden="true">
           <span class="names">Opiekun Strefy VIP</span> <br/>
-
+          <table *ngIf="applications.length > 0">
+            <tr>
+              <th>Imie</th>
+              <th>Nick</th>
+              <th>Wiek</th>
+              <th>Wybrane stanowisko</th>
+              <th>Umiejetności</th>
+              <th>Kilka słów o sobie</th>
+              <th>Dlaczego aplikuje</th>
+            </tr>
+            <tr *ngFor="let application of applications">
+              <td>{{application.name}}</td>
+              <td>{{application.nick}}</td>
+              <td>{{application.age}}</td>
+              <td>{{application.position}}</td>
+              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td>{{application.wordsAboutSelf}}</td>
+              <td>{{application.whyApply}}</td>
+            </tr>
+          </table>
         </div>
 
         <div id="helperApplications" hidden="true">
           <span class="names">Pomocnik</span> <br/>
-
+          <table *ngIf="applications.length > 0">
+            <tr>
+              <th>Imie</th>
+              <th>Nick</th>
+              <th>Wiek</th>
+              <th>Wybrane stanowisko</th>
+              <th>Umiejetności</th>
+              <th>Kilka słów o sobie</th>
+              <th>Dlaczego aplikuje</th>
+            </tr>
+            <tr *ngFor="let application of applications">
+              <td>{{application.name}}</td>
+              <td>{{application.nick}}</td>
+              <td>{{application.age}}</td>
+              <td>{{application.position}}</td>
+              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td>{{application.wordsAboutSelf}}</td>
+              <td>{{application.whyApply}}</td>
+            </tr>
+          </table>
         </div>
 
         <div id="commentApplications" hidden="true">
           <span class="names">Komentator</span> <br/>
-
+          <table *ngIf="applications.length > 0">
+            <tr>
+              <th>Imie</th>
+              <th>Nick</th>
+              <th>Wiek</th>
+              <th>Wybrane stanowisko</th>
+              <th>Umiejetności</th>
+              <th>Kilka słów o sobie</th>
+              <th>Dlaczego aplikuje</th>
+            </tr>
+            <tr *ngFor="let application of applications">
+              <td>{{application.name}}</td>
+              <td>{{application.nick}}</td>
+              <td>{{application.age}}</td>
+              <td>{{application.position}}</td>
+              <td>{{application.knowledgeTS3}}, {{application.ranks}}, {{application.createChannels}}, {{application.groupWork}} </td>
+              <td>{{application.wordsAboutSelf}}</td>
+              <td>{{application.whyApply}}</td>
+            </tr>
+          </table>
         </div>
+
       </div>
     </div>
   </div>

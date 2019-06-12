@@ -36,7 +36,12 @@ export class ApplicantFormComponent implements OnInit
     'Przygotowywanie sprawozdan z pracy'
   ];
 
-  requirementsHelper: Array<string> = [ '1h', '2h', '3h' ];
+  requirementsHelper: Array<string> = [
+    'Obsługiwanie uzytkowników na Dyżurce Administratorów',
+    'Sprawdzanie awatarów, nicków oraz opisów użytkowników',
+    'Przygotowywanie sprawozdań z pracy',
+    'Przekazywanie informacji na temat zmian w Strefie Prywatnej/VIP opiekunom'
+  ];
   requirementsComment: Array<string> = [ '1c', '2c', '3c' ];
 
   ifWroteInfo = false;
@@ -133,9 +138,10 @@ export class ApplicantFormComponent implements OnInit
       h.hidden = true;
       var box = document.getElementById('afterSend');
       box.hidden = false;
+      this.normalizeInputValues();
 
       let application: Application = {name: this.name, nick: this.nick, age: this.age, position: this.position,
-        knowledgeTs3: this.knowledgeTs3, ranks: this.ranks, createChannels: this.createChannels,
+        knowledgeTS3: this.knowledgeTs3, ranks: this.ranks, createChannels: this.createChannels,
         groupWork: this.groupWork, wordsAboutSelf: this.wordsAboutSelf, whyApply: this.whyApply};
       this.apiService.sendApplication(application).subscribe(success => {console.log(success)}, error => {console.log(error)});
     }
@@ -219,6 +225,6 @@ export class ApplicantFormComponent implements OnInit
       label.style.color = 'red';
       this.ifError = true;
     }
-    this.normalizeInputValues();
+    // this.normalizeInputValues();
   }
 }

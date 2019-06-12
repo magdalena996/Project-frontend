@@ -5,7 +5,7 @@ export interface Application
   age?: number;
   nick?: string;
   position?: string;
-  knowledgeTs3?: number;
+  knowledgeTS3?: number;
   ranks?: number;
   createChannels?: number;
   groupWork?: number;

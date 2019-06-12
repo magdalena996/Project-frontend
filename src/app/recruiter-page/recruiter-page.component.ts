@@ -25,6 +25,9 @@ export class RecruiterPageComponent implements OnInit
 
   showSpApplications()
   {
+
+    this.apiService.getAllApplicationsByPosition("opiekunSp")
+      .subscribe(data => {this.applications = data}, error => {console.log(error)});
     document.getElementById("allApplications").hidden = true;
     document.getElementById("forSelectedPosition").hidden = false;
     document.getElementById("spApplications").hidden = false;
@@ -35,6 +38,8 @@ export class RecruiterPageComponent implements OnInit
 
   showVipApplications()
   {
+    this.apiService.getAllApplicationsByPosition("opiekunVip")
+      .subscribe(data => {this.applications = data}, error => {console.log(error)});
     document.getElementById("allApplications").hidden = true;
     document.getElementById("forSelectedPosition").hidden = false;
     document.getElementById("spApplications").hidden = true;
@@ -45,6 +50,8 @@ export class RecruiterPageComponent implements OnInit
 
   showHelperApplications()
   {
+    this.apiService.getAllApplicationsByPosition("pomocnik")
+      .subscribe(data => {this.applications = data}, error => {console.log(error)});
     document.getElementById("allApplications").hidden = true;
     document.getElementById("forSelectedPosition").hidden = false;
     document.getElementById("spApplications").hidden = true;
@@ -55,6 +62,8 @@ export class RecruiterPageComponent implements OnInit
 
   showCommentApplications()
   {
+    this.apiService.getAllApplicationsByPosition("komentator")
+      .subscribe(data => {this.applications = data}, error => {console.log(error)});
     document.getElementById("allApplications").hidden = true;
     document.getElementById("forSelectedPosition").hidden = false;
     document.getElementById("spApplications").hidden = true;
@@ -65,7 +74,8 @@ export class RecruiterPageComponent implements OnInit
 
   showApplications()
   {
-    this.apiService.getAllApplications().subscribe(data => {this.applications = data}, error => {console.log(error)});
+    this.apiService.getAllApplications()
+      .subscribe(data => {this.applications = data}, error => {console.log(error)});
     document.getElementById("allApplications").hidden = false;
     document.getElementById("forSelectedPosition").hidden = true;
   }
